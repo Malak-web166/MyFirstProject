@@ -1,5 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddScoped<MyProject.Interfaces.IBookService, MyProject.Services.BookService>();
+builder.Services.AddScoped<MyProject.Interfaces.IAuthorService, MyProject.Services.AuthorService>();
+
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
@@ -27,3 +30,4 @@ app.MapControllerRoute(
 
 
 app.Run();
+
