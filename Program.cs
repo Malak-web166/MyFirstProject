@@ -12,6 +12,9 @@ builder.Services.AddScoped<CourseService>();
 
 var app = builder.Build();
 
+app.UseAuthentication(); // Checks "Who are you?"
+app.UseAuthorization();  // Checks "Are you allowed to be here?"
+
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
