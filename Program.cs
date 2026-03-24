@@ -1,9 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using MyProject.Data; // Replace 'MyProject' with your actual project name if it's different!
+using MyProject.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<MyProject.Data.ApiContext>(options =>
     options.UseInMemoryDatabase("CourseDb"));
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<CourseService>();
 
 var app = builder.Build();
 
