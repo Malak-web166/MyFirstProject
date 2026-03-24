@@ -1,11 +1,13 @@
 using Microsoft.AspNetCore.Mvc;
 using MyProject.Models;
 using MyProject.Services;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MyProject.Controllers;
-
+[Authorize]
 [ApiController]
 [Route("api/[controller]")]
+
 public class CoursesController : ControllerBase
 {
     private readonly CourseService _courseService;
